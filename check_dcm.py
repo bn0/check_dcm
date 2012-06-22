@@ -67,6 +67,7 @@ if args.aetitle:
 cmd.append(args.hostname)
 cmd.append(args.port)
 
+# send out a dicom ping and see what comes back
 try:
 	p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 except Exception, e:
