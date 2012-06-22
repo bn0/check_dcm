@@ -15,7 +15,7 @@ check_dcm.py [-h] [-V] [-v] [-t TIMEOUT] [-a AETITLE] [-H HOSTNAME] [-p PORT]
 optional arguments:
   -h, --help                        show help message and exit
   -V, --version                     display plugin version
-  -v, --verbosity                   increase output verbosity. add v's to increase detail
+  -v, --verbosity                   increase output verbosity.
   -t TIMEOUT, --timeout TIMEOUT     seconds before request timeout
   -a AETITLE, --aetitle AETITLE     ae title of modality
   -H HOSTNAME, --hostname HOSTNAME  hostname of modality
