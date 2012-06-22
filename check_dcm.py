@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# 
 # check_dcm.py
 # Nagios/Icinga plugin to check DICOM services.
 # 
@@ -8,10 +9,15 @@
 # 
 # sudo apt-get install dcmtk
 # 
-# define command{
+# Usage:
+# You can hard code your port/ae_title but I prefer to use object variables as below
+# (http://nagios.sourceforge.net/docs/3_0/customobjectvars.html)
+# 
+# define command {
 #         command_name    check_dcm
 #         command_line    $USER1$/check_dcm -H $HOSTADDRESS$ -p $_HOSTPORT$ -a $_HOSTAE_TITLE$ -v
 #         }
+
 
 import subprocess
 import sys
