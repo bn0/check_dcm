@@ -10,7 +10,8 @@ nagios system. Easiest way on an ubuntu system is to use apt:
 
 Usage:
 
-```check_dcm.py [-h] [-V] [-v] [-t TIMEOUT] [-a AETITLE] [-H HOSTNAME] [-p PORT]  
+```
+check_dcm.py [-h] [-V] [-v] [-t TIMEOUT] [-a AETITLE] [-H HOSTNAME] [-p PORT]  
 optional arguments:
   -h, --help                        show help message and exit
   -V, --version                     display plugin version
@@ -18,7 +19,7 @@ optional arguments:
   -t TIMEOUT, --timeout TIMEOUT     seconds before request timeout
   -a AETITLE, --aetitle AETITLE     ae title of modality
   -H HOSTNAME, --hostname HOSTNAME  hostname of modality
-  -p PORT, --port PORT              tcp/ip port number of modality
+  -p PORT, --port PORT              tcp/ip port number of modality  
 ```
 
 Nagios Usage:
