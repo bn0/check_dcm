@@ -7,22 +7,24 @@ to monitor STORE SCP.  It will have to be installed (or the binary built) on the
 nagios system. Easiest way on an ubuntu system is to use apt:
 
 ```sudo apt-get install dcmtk```
+***   
 
-Usage:
-
+######Usage:######
 ```
 check_dcm.py [-h] [-V] [-v] [-t TIMEOUT] [-a AETITLE] [-H HOSTNAME] [-p PORT]  
 optional arguments:
   -h, --help                        show help message and exit
   -V, --version                     display plugin version
-  -v, --verbosity                   increase output verbosity
+  -v, --verbosity                   increase output verbosity. add v's to increase detail
   -t TIMEOUT, --timeout TIMEOUT     seconds before request timeout
   -a AETITLE, --aetitle AETITLE     ae title of modality
   -H HOSTNAME, --hostname HOSTNAME  hostname of modality
   -p PORT, --port PORT              tcp/ip port number of modality  
-```
+```  
+---   
 
-Nagios Usage:
+######Nagios Usage:######
+
 You can hard code your port/ae_title but I prefer to use object variables as below
 (http://nagios.sourceforge.net/docs/3_0/customobjectvars.html)
 
