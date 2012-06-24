@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Check DCM : Nagios/Icinga plugin to check DICOM service" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Check DCM</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/bn0/check_dcm">View on GitHub</a>
+
+          <h1 id="project_title">Check DCM</h1>
+          <h2 id="project_tagline">Nagios/Icinga plugin to check DICOM service</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/bn0/check_dcm/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/bn0/check_dcm/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>check_dcm.py</h1>
+
+<p><em>Nagios/Icinga plugin to check DICOM services.</em></p>
+
+<p>The script is a wrapper for the <a href="http://dicom.offis.de/dcmtk.php.en" title="DCMTK">dcmtk</a> echoscu command to monitor STORE SCP.
+It will have to be installed (or the binary built) on the nagios system.</p>
+
+<p>The easiest way on an ubuntu system is to use apt:</p>
+
+<p><code>sudo apt-get install dcmtk</code></p>
+
+<hr><h6>Usage:</h6>
+
+<pre><code>check_dcm.py [-h] [-V] [-v] [-t TIMEOUT] [-a AETITLE] [-H HOSTNAME] [-p PORT]  
+optional arguments:
+  -h, --help                        show help message and exit
+  -V, --version                     display plugin version
+  -v, --verbosity                   increase output verbosity.
+  -t TIMEOUT, --timeout TIMEOUT     seconds before request timeout
+  -a AETITLE, --aetitle AETITLE     ae title of modality
+  -H HOSTNAME, --hostname HOSTNAME  hostname of modality
+  -p PORT, --port PORT              tcp/ip port number of modality  
+</code></pre>
+
+<hr><h6>Nagios Usage:</h6>
+
+<p>You can hard code your port/ae_title but I prefer to use <a href="http://nagios.sourceforge.net/docs/3_0/customobjectvars.html" title="Object Variables">object variables</a> as below:</p>
+
+<pre><code>define command {
+        command_name    check_dcm
+        command_line    $USER1$/check_dcm.py -H $HOSTADDRESS$ -p $_HOSTPORT$ -a $_HOSTAE_TITLE$ -v
+        }  
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Check DCM maintained by <a href="https://github.com/bn0">bn0</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-32857611-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
