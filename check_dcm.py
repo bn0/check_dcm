@@ -37,7 +37,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-V", "--version", action="store_true", help="display plugin version")
 parser.add_argument("-v", "--verbosity", action="count", default=0, help="increase output verbosity")
 parser.add_argument("-t", "--timeout", default='10', help="seconds before request timeout")
-parser.add_argument("-a", "--aetitle", help="ae title of modality")
+parser.add_argument("-aet", "--aetitle", help="calling AE Title (default: ECHOSCU")
+parser.add_argument("-aec", "--call", help="ae title of modality (default: ANY-SCP")
 parser.add_argument("-H", "--hostname", help="hostname of modality")
 parser.add_argument("-p", "--port", default='104', help="tcp/ip port number of modality")
 
@@ -67,8 +68,12 @@ if args.timeout:
 	cmd.append(args.timeout)
 
 if args.aetitle:
-	cmd.append('-aec')
+	cmd.append('-aet')
 	cmd.append(args.aetitle)
+
+if args.call:
+	cmd.append('-aec')
+	cmd.append(args.call)
 
 cmd.append(args.hostname)
 cmd.append(args.port)
