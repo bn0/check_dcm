@@ -24,7 +24,7 @@ import sys
 import argparse
 
 # Version
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 
 # Exit Codes
 STATE_OK = 0
