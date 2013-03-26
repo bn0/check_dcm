@@ -78,6 +78,7 @@ if args.call:
 cmd.append(args.hostname)
 cmd.append(args.port)
 
+
 # send out a dicom ping and see what comes back
 try:
 	p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -88,23 +89,23 @@ else:
 
 	if p.returncode:
 		if args.verbosity:
-			print "CRITICAL - Association Request Failed (TCP Initialization Error: Connection refused)"
+			print "DICOM CRITICAL - Association Request Failed (TCP Initialization Error: Connection refused)"
 			if args.verbosity > 1:
 				for line in stdout.splitlines():
 					print line
 		else:
-			print "CRITICAL - Association Request Failed"
+			print "DICOM CRITICAL - Association Request Failed"
 
 		sys.exit(STATE_CRITICAL)
 
 	else:
 		if args.verbosity:
-			print "OK - Association Accepted (Received Echo Response (Status: Success))"
+			print "DICOM OK - Association Accepted (Received Echo Response (Status: Success))"
 			if args.verbosity > 1:
 				for line in stdout.splitlines():
 					print line
 		else:
-			print "OK - Association Accepted"
+			print "DICOM OK - Association Accepted"
 
 		sys.exit(STATE_OK)
 
