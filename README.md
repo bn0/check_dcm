@@ -32,6 +32,6 @@ You can hard code your port/ae_title but I prefer to use [object variables](http
 ```
 define command {
         command_name    check_dcm
-        command_line    $USER1$/check_dcm.py -H $HOSTADDRESS$ -p $_HOSTPORT$ -a $_HOSTAE_TITLE$ -v
+        command_line    $USER1$/check_dcm.py -H $HOSTADDRESS$ -p $_HOSTPORT$ -aec $_HOSTAE_TITLE$ -v
         }  
 ```
