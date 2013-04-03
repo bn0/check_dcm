@@ -2,9 +2,9 @@ check_dcm.py
 ============
 _Nagios/Icinga plugin to check DICOM services._
 
-The script is a wrapper for the [dcmtk](http://dicom.offis.de/dcmtk.php.en "DCMTK") echoscu command to monitor STORE SCP. It will have to be installed (or the binary built) on the nagios system.  
-The easiest way on an ubuntu system is to use apt:  
+The script is a wrapper for the [dcmtk](http://dicom.offis.de/dcmtk.php.en "DCMTK") echoscu command to monitor STORE SCP. It will have to be installed (or the binary built) on the nagios system.
 
+The easiest way on an ubuntu system is to use apt:
 ```sudo apt-get install dcmtk```
 
 Usage:
